@@ -8,8 +8,8 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  create(@Body() createProductDto: CreateProductDto) {
-    return this.productsService.create(createProductDto);
+  create(@Body() body:any) {
+    return this.productsService.create(body);
   }
 
   @Get()
@@ -23,8 +23,8 @@ export class ProductsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
-    return this.productsService.update(+id, updateProductDto);
+  update(@Param('id') id: string, @Body() body:any) {
+    return this.productsService.update(+id, body);
   }
 
   @Delete(':id')
